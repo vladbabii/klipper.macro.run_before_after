@@ -2,6 +2,16 @@
 
 This is used to be able to dinamically run macros before/after events without hardcoding them.
 
+```
+[gcode_macro MY_EVENT_MACRO]
+variable_after_eventname: 1
+variable_before_othereventname: 2
+gcode:
+  ...
+```
+This will configure MY_EVENT_MACRO to run before "othereventname" with priority 2, and after "eventname" with priority 1
+Priority can be any number from 0 to 999.
+
 Example usage:
 
 ```
